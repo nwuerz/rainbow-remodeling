@@ -56,7 +56,7 @@ const ProductHeroLayout = (props) => {
     <section className={classes.root}>
       <Container className={classes.container}>
         <img
-          src="/static/images/wonder.png"
+          src="/static/images/rainbow-roof.jpg"
           alt="wonder"
           width="147"
           height="80"
@@ -66,7 +66,7 @@ const ProductHeroLayout = (props) => {
         <div className={clsx(classes.background, backgroundClassName)} />
         <img
           className={classes.arrowDown}
-          src="https://raw.githubusercontent.com/mui-org/material-ui/master/docs/public/static/themes/onepirate/productHeroArrowDown.png"
+          src="/static/images/arrow-down.png"
           height="16"
           width="12"
           alt="arrow down"
@@ -77,9 +77,9 @@ const ProductHeroLayout = (props) => {
 };
 
 ProductHeroLayout.propTypes = {
-    backgroundClassName: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
-    classes: PropTypes.object.isRequired,
-  };
+  backgroundClassName: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(ProductHeroLayout);

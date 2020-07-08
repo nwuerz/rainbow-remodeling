@@ -7,6 +7,9 @@ const styles = (theme) => ({
     root: {
       display: 'flex',
       overflow: 'hidden',
+      background: '#2b5876', 
+      background: '-webkit-linear-gradient(109.6deg,  rgba(255,24,134,1) 11.2%, rgba(252,232,68,1) 52%, rgba(53,178,239,1) 100.2%)',
+      background: 'linear-gradient(109.6deg,  rgba(255,24,134,1) 11.2%, rgba(252,232,68,1) 52%, rgba(53,178,239,1) 100.2%)',
     },
     container: {
       marginTop: theme.spacing(15),
@@ -56,7 +59,7 @@ const styles = (theme) => ({
                 <Typography variant="h6" className={classes.title}>
                   Roofing
                 </Typography>
-                <Typography variant="h5">
+                <Typography  variant="h5">
                   {'We specialize in the replacement of both commercial and residential roofing systems.'}
                 </Typography>
               </div>
@@ -86,8 +89,8 @@ const styles = (theme) => ({
                 <Typography variant="h6" className={classes.title}>
                   Carpentry
                 </Typography>
-                <Typography variant="h5">
-                  {'By registering, you will access specially negotiated rates that you will not find anywhere else.'}
+                <Typography variant="h5" align="center">
+                  {'From flooring and cabinetry to patio covers and siding, Rainbow has over 20 years of experience residential carpentry.'}
                 </Typography>
               </div>
             </Grid>

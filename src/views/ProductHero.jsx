@@ -47,7 +47,7 @@ const ProductHero = (props) => {
         variant="h5"
         className={classes.h5}
       >
-        Quality work at resonable prices.
+        Quality work at an affordable price.
       </Typography>
       <Typography variant="body2" color="inherit" className={classes.more}>
         Discover our services
