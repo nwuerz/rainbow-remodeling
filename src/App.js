@@ -1,16 +1,21 @@
 import withRoot from './withRoot';
 import React from 'react';
 import './App.css';
-import ProductHero from './views/ProductHero';
-import ProductValues from './views/ProductValues';
-import ProductCategories from './views/ProductCategories';
+import Home from './pages/Home';
+import { Route, Switch } from "react-router-dom";
+import Estimate from './pages/Estimate';
 
 function App() {
   return (
     <>
-      <ProductHero />
-      <ProductValues />
-      <ProductCategories />
+      <Switch>
+        <Route exact path={["/", "/home"]}>
+          <Home />
+        </Route>
+        <Route exact path={["/estimate"]}>
+          <Estimate />
+        </Route>
+      </Switch>
     </>
   );
 }

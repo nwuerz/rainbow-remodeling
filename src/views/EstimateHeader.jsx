@@ -25,12 +25,13 @@ const styles = (theme) => ({
       alignItems: 'center',
       padding: theme.spacing(0, 5),
     },
-    image: {
-      height: 55,
-    },
     title: {
       marginTop: theme.spacing(5),
       marginBottom: theme.spacing(5),
+    },
+    subtitle: {
+        marginTop: theme.spacing(10),
+        fontWeight: "bold",
     },
     curvyLines: {
       pointerEvents: 'none',
@@ -50,49 +51,20 @@ const styles = (theme) => ({
             className={classes.curvyLines}
             alt="curvy lines"
           />
-          <Grid container spacing={5}>
-            <Grid item xs={12} md={4}>
+          <Grid container spacing={10}>
+            <Grid item xs={12} md={12}>
               <div className={classes.item}>
-                <img
-                  className={classes.image}
-                  src="/static/images/roof-icon.png"
-                  alt="roof"
-                />
-                <Typography variant="h6" className={classes.title}>
-                  Roofing
+                <Typography variant="h2" align="center" className={classes.title}>
+                  {'We now offer'}
                 </Typography>
-                <Typography  variant="h5">
-                  {'We specialize in the replacement of both commercial and residential roofing systems.'}
+                <Typography variant="h3" align="center" className={classes.title}>
+                  {'free, no-contact, no-obligation'}
                 </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <div className={classes.item}>
-                <img
-                  className={classes.image}
-                  src="/static/images/paint-brush-icon.png"
-                  alt="paintbrush"
-                />
-                <Typography variant="h6" className={classes.title}>
-                  Painting
+                <Typography variant="h4" align="center" className={classes.title}>
+                  {'roof inspections'}
                 </Typography>
-                <Typography variant="h5">
-                  {'Looking to freshen up your interior/exterior paint? We\'ve got you covered!'}
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <div className={classes.item}>
-                <img
-                  className={classes.image}
-                  src="/static/images/carpentry.png"
-                  alt="clock"
-                />
-                <Typography variant="h6" className={classes.title}>
-                  Carpentry
-                </Typography>
-                <Typography variant="h5" align="center">
-                  {'From flooring and cabinetry to patio covers and siding, Rainbow has over 20 years of experience residential carpentry.'}
+                <Typography variant="h5" align="center" className={classes.subtitle}>
+                  {'Let us know how we can help by filling out the form below and we will be in touch to schedule your inspection!'}
                 </Typography>
               </div>
             </Grid>
