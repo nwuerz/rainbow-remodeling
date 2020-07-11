@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
@@ -19,14 +19,9 @@ import {
   FormLabel
 } from "@material-ui/core";
 
-// const backgroundImage =
-//   "/static/images/pattern.jpg";
-
 const useStyles = makeStyles(() => ({
   root: {
     justifyContent: "center",
-    // backgroundImage: `url(${backgroundImage})`,
-    // backgroundPosition: "center"
   },
   input: {
       background: "white"
@@ -38,6 +33,33 @@ const useStyles = makeStyles(() => ({
 }));
 
 const EstimateForm = (props) => {
+
+    const [currentUser, setCurrentUser] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        address: "",
+        hasInsurance: false,
+        hasAdjuster: false,
+        isCommercial: false,
+        moreInfo: ""
+    });
+    
+    const { firstName, lastName, email, phone, address, hasInsurance, hasAdjuster, isCommercial, moreInfo } = currentUser;
+
+    const handleInput = (event) => {
+        const { value, name } = event.target;
+        setCurrentUser({...currentUser, [name]: value });
+    };
+    
+    const handleChange = (event) => {
+        const { checked, name } = event.target
+        setCurrentUser({ ...currentUser, [name]: checked });
+    }
+
+    const handleSubmit
+
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -59,6 +81,8 @@ const EstimateForm = (props) => {
                   label="First name"
                   margin="dense"
                   name="firstName"
+                  value={firstName}
+                  onChange={handleInput}
                   required
                   variant="outlined"
                   className={classes.input}
@@ -70,6 +94,8 @@ const EstimateForm = (props) => {
                   label="Last name"
                   margin="dense"
                   name="lastName"
+                  value={lastName}
+                  onChange={handleInput}
                   required
                   variant="outlined"
                   className={classes.input}
@@ -81,6 +107,8 @@ const EstimateForm = (props) => {
                   label="Email Address"
                   margin="dense"
                   name="email"
+                  value={email}
+                  onChange={handleInput}
                   variant="outlined"
                   className={classes.input}
                 />
@@ -91,6 +119,8 @@ const EstimateForm = (props) => {
                   label="Phone Number"
                   margin="dense"
                   name="phone"
+                  value={phone}
+                  onChange={handleInput}
                   type="number"
                   required
                   variant="outlined"
@@ -102,7 +132,9 @@ const EstimateForm = (props) => {
                   fullWidth
                   label="Address"
                   margin="dense"
-                  name="username"
+                  name="address"
+                  value={address}
+                  onChange={handleInput}
                   required
                   variant="outlined"
                   className={classes.input}
@@ -110,29 +142,31 @@ const EstimateForm = (props) => {
               </Grid>
               <Grid item md={12} xs={11}>
                 <FormLabel component="legend">Please select all that apply:</FormLabel>
-                <FormGroup align="center">
-                    <Grid item md={12} xs={11}>
-                    <FormControlLabel
-                    control={<Switch name="claim" />}
-                    label="I will be filing an insurance Claim"
-                    />
-                    <FormControlLabel
-                    control={<Switch name="adjuster" />}
-                    label="An adjuster has been out to my home"
-                    />
-                    <FormControlLabel
-                    control={<Switch name="adjuster" />}
-                    label="I need commercial roofing service"
-                    />
-                    </Grid>
-                </FormGroup> 
+                    <FormGroup align="center">
+                        <Grid item md={12} xs={11}>
+                        <FormControlLabel
+                            control={<Switch checked={hasInsurance} onChange={handleChange} name="hasInsurance" />}
+                            label="I will be filing an insurance Claim"
+                        />
+                        <FormControlLabel
+                            control={<Switch checked={hasAdjuster} onChange={handleChange} name="hasAdjuster" />}
+                            label="An adjuster has been out to my home"
+                        />
+                        <FormControlLabel
+                            control={<Switch checked={isCommercial} onChange={handleChange} name="isCommercial" />}
+                            label="I need commercial roofing service"
+                        />
+                        </Grid>
+                    </FormGroup> 
                </Grid>
                <Grid item md={12} xs={11}>
                 <TextField
                   fullWidth
                   label="Additional Info"
                   margin="dense"
-                  name="additionalInfo"
+                  name="moreInfo"
+                  value={moreInfo}
+                  onChange={handleInput}
                   multiline
                   rows={4}
                   variant="outlined"
