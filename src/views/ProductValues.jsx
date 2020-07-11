@@ -7,10 +7,6 @@ const styles = (theme) => ({
     root: {
       display: 'flex',
       overflow: 'hidden',
-      background: '#2b5876', 
-      // eslint-disable-next-line
-      background: '-webkit-linear-gradient(109.6deg,  rgba(255,24,134,1) 11.2%, rgba(252,232,68,1) 52%, rgba(53,178,239,1) 100.2%)',
-      // eslint-disable-next-line
       background: 'linear-gradient(109.6deg,  rgba(255,24,134,1) 11.2%, rgba(252,232,68,1) 52%, rgba(53,178,239,1) 100.2%)',
     },
     container: {
