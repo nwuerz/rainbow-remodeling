@@ -40,13 +40,14 @@ const EstimateForm = (props) => {
         email: "",
         phone: "",
         address: "",
+        zip: "",
         hasInsurance: false,
         hasAdjuster: false,
         isCommercial: false,
         moreInfo: ""
     });
     
-    const { firstName, lastName, email, phone, address, hasInsurance, hasAdjuster, isCommercial, moreInfo } = currentUser;
+    const { firstName, lastName, email, phone, address, zip, hasInsurance, hasAdjuster, isCommercial, moreInfo } = currentUser;
 
     const handleInput = (event) => {
         const { value, name } = event.target;
@@ -57,8 +58,6 @@ const EstimateForm = (props) => {
         const { checked, name } = event.target
         setCurrentUser({ ...currentUser, [name]: checked });
     }
-
-    const handleSubmit
 
   const { className, ...rest } = props;
 
@@ -75,7 +74,7 @@ const EstimateForm = (props) => {
           <Divider />
           <CardContent>
             <Grid container spacing={3}>
-              <Grid item md={6} xs={11}>
+              <Grid item md={6} xs={12}>
                 <TextField
                   fullWidth
                   label="First name"
@@ -88,7 +87,7 @@ const EstimateForm = (props) => {
                   className={classes.input}
                 />
               </Grid>
-              <Grid item md={6} xs={11}>
+              <Grid item md={6} xs={12}>
                 <TextField
                   fullWidth
                   label="Last name"
@@ -101,7 +100,7 @@ const EstimateForm = (props) => {
                   className={classes.input}
                 />
               </Grid>
-              <Grid item md={6} xs={11}>
+              <Grid item md={6} xs={12}>
                 <TextField
                   fullWidth
                   label="Email Address"
@@ -113,7 +112,7 @@ const EstimateForm = (props) => {
                   className={classes.input}
                 />
               </Grid>
-              <Grid item md={6} xs={11}>
+              <Grid item md={6} xs={12}>
                 <TextField
                   fullWidth
                   label="Phone Number"
@@ -127,10 +126,10 @@ const EstimateForm = (props) => {
                   className={classes.input}
                 />
               </Grid>
-              <Grid item md={12} xs={11}>
+              <Grid item md={8} xs={12}>
                 <TextField
                   fullWidth
-                  label="Address"
+                  label="Street Address"
                   margin="dense"
                   name="address"
                   value={address}
@@ -140,17 +139,30 @@ const EstimateForm = (props) => {
                   className={classes.input}
                 />
               </Grid>
-              <Grid item md={12} xs={11}>
+              <Grid item md={4} xs={12}>
+                <TextField
+                  fullWidth
+                  label="Zip Code"
+                  margin="dense"
+                  name="zip"
+                  value={zip}
+                  onChange={handleInput}
+                  required
+                  variant="outlined"
+                  className={classes.input}
+                />
+              </Grid>
+              <Grid item md={12} xs={12}>
                 <FormLabel component="legend">Please select all that apply:</FormLabel>
                     <FormGroup align="center">
-                        <Grid item md={12} xs={11}>
+                        <Grid item md={12} xs={12}>
                         <FormControlLabel
                             control={<Switch checked={hasInsurance} onChange={handleChange} name="hasInsurance" />}
                             label="I will be filing an insurance Claim"
                         />
                         <FormControlLabel
                             control={<Switch checked={hasAdjuster} onChange={handleChange} name="hasAdjuster" />}
-                            label="An adjuster has been out to my home"
+                            label="An adjuster has been to my home"
                         />
                         <FormControlLabel
                             control={<Switch checked={isCommercial} onChange={handleChange} name="isCommercial" />}
@@ -159,7 +171,7 @@ const EstimateForm = (props) => {
                         </Grid>
                     </FormGroup> 
                </Grid>
-               <Grid item md={12} xs={11}>
+               <Grid item md={12} xs={12}>
                 <TextField
                   fullWidth
                   label="Additional Info"

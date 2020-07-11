@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { ButtonBase, Container, Typography }from '@material-ui/core';
+import { useHistory } from "react-router-dom";
 
 const styles = (theme) => ({
   root: {
@@ -82,6 +83,8 @@ const styles = (theme) => ({
 });
 
 function ProductCategories(props) {
+  let history = useHistory();
+
   const { classes } = props;
 
   const images = [
@@ -90,24 +93,28 @@ function ProductCategories(props) {
         '/static/images/astonwood-sierra-slate-grey.jpg',
       title: 'Request An Estimate',
       width: '40%',
+      href: "/estimate"
     },
     {
       url:
       '/static/images/dusk-roof.jpg',
       title: 'Insurance Claims Assistance',
       width: '60%',
+      href: "/claims"
     },
     {
       url:
         '/static/images/roof-thunderstorm-grey.jpg',
       title: 'Referral Rewards',
       width: '60%',
+      href: "/referral"
     },
     {
       url:
         '/static/images/heritage-oxford-grey-dallas.jpg',
       title: 'Projet Gallery',
       width: '40%',
+      href: "/gallery"
     },
   ];
 
@@ -124,6 +131,7 @@ function ProductCategories(props) {
             style={{
               width: image.width,
             }}
+            onClick={()=>history.push(image.href)}
           >
             <div
               className={classes.imageSrc}
