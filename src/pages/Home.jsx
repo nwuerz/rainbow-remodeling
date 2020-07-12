@@ -4,7 +4,7 @@ import ProductHero from '../views/ProductHero';
 import ProductValues from '../views/ProductValues';
 import ProductCategories from '../views/ProductCategories';
 
-function Home(props) {
+function Home() {
   return (
     <>
       <ProductHero />

@@ -55,12 +55,12 @@ const ProductHeroLayout = (props) => {
   return (
     <section className={classes.root}>
       <Container className={classes.container}>
-        <img
+        {/* <img
           src="/static/images/rainbow-roof.jpg"
           alt="wonder"
-          width="147"
+          width="100%"
           height="80"
-        />
+        /> */}
         {children}
         <div className={classes.backdrop} />
         <div className={clsx(classes.background, backgroundClassName)} />

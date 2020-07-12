@@ -10,54 +10,61 @@ import {
   Container,
   Divider,
   Grid,
-  Button,
   Switch,
   TextField,
   FormControl,
   FormControlLabel,
   FormGroup,
-  FormLabel
+  FormLabel,
+  Button
 } from "@material-ui/core";
+import SubmitButton from "../components/SubmitButton";
 
 const useStyles = makeStyles(() => ({
   root: {
     justifyContent: "center",
   },
   input: {
-      background: "white"
-  },
-  button: {
-    background: "black", 
-    color: "white"
+    background: "white",
   }
 }));
 
 const EstimateForm = (props) => {
+  const [currentUser, setCurrentUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    zip: "",
+    hasInsurance: false,
+    hasAdjuster: false,
+    isCommercial: false,
+    moreInfo: "",
+  });
 
-    const [currentUser, setCurrentUser] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        address: "",
-        zip: "",
-        hasInsurance: false,
-        hasAdjuster: false,
-        isCommercial: false,
-        moreInfo: ""
-    });
-    
-    const { firstName, lastName, email, phone, address, zip, hasInsurance, hasAdjuster, isCommercial, moreInfo } = currentUser;
+  const {
+    firstName,
+    lastName,
+    email,
+    phone,
+    address,
+    zip,
+    hasInsurance,
+    hasAdjuster,
+    isCommercial,
+    moreInfo,
+  } = currentUser;
 
-    const handleInput = (event) => {
-        const { value, name } = event.target;
-        setCurrentUser({...currentUser, [name]: value });
-    };
-    
-    const handleChange = (event) => {
-        const { checked, name } = event.target
-        setCurrentUser({ ...currentUser, [name]: checked });
-    }
+  const handleInput = (event) => {
+    const { value, name } = event.target;
+    setCurrentUser({ ...currentUser, [name]: value });
+  };
+
+  const handleChange = (event) => {
+    const { checked, name } = event.target;
+    setCurrentUser({ ...currentUser, [name]: checked });
+  };
 
   const { className, ...rest } = props;
 
@@ -153,25 +160,45 @@ const EstimateForm = (props) => {
                 />
               </Grid>
               <Grid item md={12} xs={12}>
-                <FormLabel component="legend">Please select all that apply:</FormLabel>
-                    <FormGroup align="center">
-                        <Grid item md={12} xs={12}>
-                        <FormControlLabel
-                            control={<Switch checked={hasInsurance} onChange={handleChange} name="hasInsurance" />}
-                            label="I will be filing an insurance Claim"
+                <FormLabel component="legend">
+                  Please select all that apply:
+                </FormLabel>
+                <FormGroup align="center">
+                  <Grid item md={12} xs={12}>
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={hasInsurance}
+                          onChange={handleChange}
+                          name="hasInsurance"
                         />
-                        <FormControlLabel
-                            control={<Switch checked={hasAdjuster} onChange={handleChange} name="hasAdjuster" />}
-                            label="An adjuster has been to my home"
+                      }
+                      label="I will be filing an insurance Claim"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={hasAdjuster}
+                          onChange={handleChange}
+                          name="hasAdjuster"
                         />
-                        <FormControlLabel
-                            control={<Switch checked={isCommercial} onChange={handleChange} name="isCommercial" />}
-                            label="I need commercial roofing service"
+                      }
+                      label="An adjuster has been to my home"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={isCommercial}
+                          onChange={handleChange}
+                          name="isCommercial"
                         />
-                        </Grid>
-                    </FormGroup> 
-               </Grid>
-               <Grid item md={12} xs={12}>
+                      }
+                      label="I need commercial roofing service"
+                    />
+                  </Grid>
+                </FormGroup>
+              </Grid>
+              <Grid item md={12} xs={12}>
                 <TextField
                   fullWidth
                   label="Additional Info"
@@ -188,10 +215,14 @@ const EstimateForm = (props) => {
             </Grid>
           </CardContent>
           <Divider />
-          <CardActions classes={{root: classes.root}}>
-            <Button className={classes.button} variant="contained">
-              Submit
-            </Button>
+          <CardActions classes={{root: classes.root}} style={{ textAlign: "center" }}>
+            {firstName && lastName && email && phone && address && zip !== "" ? (
+              <SubmitButton />
+            ):(
+              <Button disabled align="center" style={{ backgroundColor: "grey", color: "white" }}>
+                Submit
+              </Button>
+            )}
           </CardActions>
         </FormControl>
       </Container>
