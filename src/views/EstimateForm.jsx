@@ -18,7 +18,7 @@ import {
   FormLabel,
   Button,
 } from "@material-ui/core";
-import SubmitButton from "../components/SubmitButton";
+import SuccessAlert from "../components/SuccessAlert";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -28,14 +28,14 @@ const useStyles = makeStyles(() => ({
     background: "white",
   },
   button: {
-    border: "none",
-    background: "white"
-  }
+    background: "black",
+    color: "white"
+  },
 }));
 
-//user state
-
 const EstimateForm = (props) => {
+
+  //user state
   const defaultUserState = {
     firstName: "",
     lastName: "",
@@ -101,8 +101,21 @@ const EstimateForm = (props) => {
       }
     };
     xhr.send(JSON.stringify(currentUser));
-    console.log(moreInfo);
     setCurrentUser({ currentUser: defaultUserState });
+  };
+
+  const displayButton = ()=> {
+    if (firstName && lastName && email && phone && address && zip !== ""){
+      return (
+        <Button type="submit" style={{ backgroundColor: "black", color: "white" }} variant="outlined">
+          Submit
+        </Button>
+      );
+        } return  (
+          <Button disabled align="center" style={{ backgroundColor: "grey", color: "white" }}>
+              Submit
+          </Button>
+        )
   };
 
   const { className, ...rest } = props;
@@ -264,16 +277,8 @@ const EstimateForm = (props) => {
               classes={{ root: classes.root }}
               style={{ textAlign: "center" }}
             >
-              {/* {status === "SUCCESS" ? <p>Thanks!</p> : <button style={{border: "none", background:"white"}}><SubmitButton type="submit"/></button>}
-              {status === "ERROR" && <p>Ooops! There was an error.</p>} */}
-
-              {firstName && lastName && email && phone && address && zip !== "" & status !== "SUCCESS" ? (
-              <button className={classes.button}><SubmitButton /></button>
-            ):(
-              <Button disabled align="center" style={{ backgroundColor: "grey", color: "white" }}>
-                Submit
-              </Button>
-            )}
+              {status === "SUCCESS" ? <SuccessAlert /> : displayButton()}
+              {status === "ERROR" ? <p>Sorry, something went wrong! Please give us a call at (469) 855-6912.</p> : null}
             </CardActions>
           </FormControl>
         </form>

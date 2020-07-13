@@ -17,32 +17,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomizedSnackbars() {
+const SuccessAlert = ()=> {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
+  const [open, setOpen] = React.useState(true);
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
-
     setOpen(false);
   };
 
   return (
     <div className={classes.root}>
-      <Button style={{ backgroundColor: "black", color: "white" }} variant="outlined" onClick={handleClick}>
-        Submit
+      <Button disabled align="center" style={{ backgroundColor: "grey", color: "white" }}>
+          Submit
       </Button>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success">
-          Thanks, we'll be in touch!
-        </Alert>
+          <Alert onClose={handleClose} severity="info">
+            Thanks, we'll be in touch!
+          </Alert>
       </Snackbar>
     </div>
   );
 }
+
+export default SuccessAlert;

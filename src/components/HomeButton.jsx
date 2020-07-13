@@ -8,7 +8,7 @@ const HomeButton = () => {
 
   return (
     <>
-      <Fab style={{position: "absolute", right: "0px", backgroundColor: "transparent"}} onClick={()=>history.push("/")} >
+      <Fab autoFocus style={{position: "absolute", right: "0px", backgroundColor: "transparent"}} onClick={()=>history.push("/")} >
         <HomeIcon />
       </Fab>
     </>
