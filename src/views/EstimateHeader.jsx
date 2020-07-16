@@ -17,7 +17,7 @@ const styles = (theme) => ({
   },
   container: {
     marginTop: theme.spacing(15),
-    marginBottom: theme.spacing(30),
+    marginBottom: theme.spacing(15),
     display: "flex",
     position: "relative",
   },
@@ -39,11 +39,11 @@ const styles = (theme) => ({
   skyline: {
     position: "relative",
     maxWidth: "100%",
-    bottom: -245
+    bottom: -125
   }
 });
 
-function ProductValues(props) {
+const EstimateHeader = (props)=> {
   const { classes } = props;
 
   return (
@@ -79,8 +79,8 @@ function ProductValues(props) {
   );
 }
 
-ProductValues.propTypes = {
+EstimateHeader.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProductValues);
+export default withStyles(styles)(EstimateHeader);
