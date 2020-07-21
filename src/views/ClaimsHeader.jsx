@@ -12,7 +12,7 @@ const styles = (theme) => ({
   },
   container: {
     marginTop: theme.spacing(15),
-    marginBottom: theme.spacing(5),
+    marginBottom: theme.spacing(10),
     display: "flex",
     position: "relative",
   },
@@ -23,12 +23,15 @@ const styles = (theme) => ({
     padding: theme.spacing(0, 5),
   },
   image: {
-    height: 250,
-    width: "100%"
+    height: "100%",
+    width: "100%",
+    // marginBottom: theme.spacing(7)
   },
   row: {
-    marginTop: theme.spacing(5),
-    marginBottom: theme.spacing(5),
+    marginTop: theme.spacing(5)
+  },
+  text: {
+    marginTop: "15%"
   },
   title: {
     marginTop: theme.spacing(2),
@@ -40,6 +43,11 @@ const styles = (theme) => ({
     position: "absolute",
     top: -180,
   },
+  link:
+  {
+    color: "blue",
+    textDecoration: "none"
+  }
 });
 
 function ClaimsHeader(props) {
@@ -57,7 +65,7 @@ function ClaimsHeader(props) {
           <Grid item xs={12} md={12}>
             <div className={classes.item}>
               <Typography variant="h2" align="center" className={classes.title}>
-                {"Home Insurnance Claims Assistance"}
+                {"Home Insurance Claims Assistance"}
               </Typography>
             </div>
           </Grid>
@@ -69,7 +77,7 @@ function ClaimsHeader(props) {
           </Grid>
           <Grid item xs={12} s={6} md={6} lg={6}>
             <div>
-            <Typography variant="h6" align="center" >
+            <Typography className={classes.text} variant="h6" align="center" >
               {
                   "Due to the severitry of weather in Texas, thousands of roofs are replaced every year due to wind and hail damage. These roof replacements are typically covered by most homeowners' insurance policies. For many of our customers, this is the first and last claim they will ever file. Our experience and understanding of the claims process will help you maximize the return on your insurance investment."
               }
@@ -85,9 +93,13 @@ function ClaimsHeader(props) {
           </Grid>
           <Grid item xs={12} s={6} md={6} lg={6}>
             <div>
-            <Typography variant="h6" align="center">
+            <Typography className={classes.text} variant="h6" align="center">
               {
-                "If you have recently filed a claim with your insurance company, received an insurance settlement, or would just like to know whether it makes sense to pursue an insurance claim, Rainbow can help. Call us today or request a quote here and will be able to help you in as little as 24 hours."
+                "If you have recently filed a claim with your insurance company, received an insurance settlement, or would just like to know whether it makes sense to pursue an insurance claim, Rainbow can help. Call us today at (469)855-6912 or" 
+              }
+              <a href="/estimate" className={classes.link}> request a quote </a>
+              {
+                "and will be able to help you in as little as 24 hours."
               }
             </Typography>
             </div>
