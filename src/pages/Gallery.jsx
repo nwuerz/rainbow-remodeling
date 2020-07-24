@@ -2,6 +2,7 @@ import React from 'react';
 import HomeButton from '../components/HomeButton';
 import GalleryHeader from '../views/GalleryHeader';
 import Projects from '../views/Projects';
+import GalleryFooter from '../views/GalleryFooter';
 
 const Gallery = () => {
     return ( 
@@ -9,6 +10,7 @@ const Gallery = () => {
         <HomeButton />
         <GalleryHeader />
         <Projects />
+        <GalleryFooter />
         </>
      );
 }

@@ -1,38 +1,47 @@
 [
     {
         "img": "/static/images/patio-attachment.jpg",
-        "title": "Custom backyard patio attachment - Garland, TX"
+        "title": "Custom backyard patio attachment - Garland, TX",
+        "popoverImg":"/static/images/patio-attachment.jpg"
     },
     {
         "img": "/static/images/korean-church.jpg",
-        "title": "Korean Central United Methodist Church - Dallas, TX"
+        "title": "Korean Central United Methodist Church - Dallas, TX",
+        "popoverImg":"static/images/korean-church.jpg"
     },
     {
         "img": "/static/images/advocacy-center.jpg",
-        "title": "Childrens Advocacy Center - Lewisville, TX"
+        "title": "Childrens Advocacy Center - Lewisville, TX",
+        "popoverImg":"/static/images/advocacy-center.jpg"
     },
     {
         "img": "/static/images/ntx-job-core.jpg",
-        "title": "North Texas Job Core - McKinney, TX"
+        "title": "North Texas Job Core - McKinney, TX",
+        "popoverImg":"/static/images/patio-attachment.jpg"
     },
     {
         "img": "/static/images/aquatics-center.jpg",
-        "title": "Chisolm Park Aquatics Center - Hurst, TX"
+        "title": "Chisolm Park Aquatics Center - Hurst, TX",
+        "popoverImg":"/static/images/patio-attachment.jpg"
     },
     {
         "img": "/static/images/adjuster-markings.jpg",
-        "title": "Adjuster markings of hail damage for total loss, full replacement! - Richardson, TX"
+        "title": "Adjuster markings of hail damage for total loss, full replacement! - Richardson, TX",
+        "popoverImg":"/static/images/patio-attachment.jpg"
     },
     {
         "img": "/static/images/lifetime-shingles.jpg",
-        "title": "Completed residential roof with Lifetime shingles! - Plano, TX"
+        "title": "Completed residential roof with Lifetime shingles! - Plano, TX",
+        "popoverImg":"/static/images/patio-attachment.jpg"
     },
     {
         "img": "/static/images/1605-front.jpg",
-        "title": "Completed residential roof with standard shingles! - Carrollton, TX"
+        "title": "Completed residential roof with standard shingles! - Carrollton, TX",
+        "popoverImg":"/static/images/patio-attachment.jpg"
     },
     {
         "img": "/static/images/1605-side.jpg",
-        "title": "Completed residential roof with standard shingles! - Carrollton, TX"
+        "title": "Completed residential roof with standard shingles! - Carrollton, TX",
+        "popoverImg":"/static/images/patio-attachment.jpg"
     }
 ]

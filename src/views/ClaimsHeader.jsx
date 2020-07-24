@@ -95,11 +95,15 @@ function ClaimsHeader(props) {
             <div>
             <Typography className={classes.text} variant="h6" align="center">
               {
-                "If you have recently filed a claim with your insurance company, received an insurance settlement, or would just like to know whether it makes sense to pursue an insurance claim, Rainbow can help. Call us today at (469)855-6912 or" 
+                "If you have recently filed a claim with your insurance company, received an insurance settlement, or would just like to know whether it makes sense to pursue an insurance claim, Rainbow can help." 
+              }
+              <a className={classes.link} href="tel:469-855-6912">  call us </a>
+              {
+                "today or"
               }
               <a href="/estimate" className={classes.link}> request a quote </a>
               {
-                "and will be able to help you in as little as 24 hours."
+                "and we will be able to help you in as little as 24 hours."
               }
             </Typography>
             </div>
