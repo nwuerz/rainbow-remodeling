@@ -1,15 +1,15 @@
 import React, { useState }  from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import {
   GridList,
   GridListTile,
   GridListTileBar,
-  IconButton,
-  Popover
+  IconButton
 } from "@material-ui/core";
 import ZoomOutMapIcon from "@material-ui/icons/ZoomOutMap";
-import CloseIcon from '@material-ui/icons/Close';
 import tileData from "../components/tileData.json";
+import ImgPopover from "../components/ImgPopover";
+import { makeStyles } from "@material-ui/core/styles";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,18 +44,12 @@ const useStyles = makeStyles((theme) => ({
 const Projects = () => {
   const classes = useStyles();
 
-  const [anchorPosition, setAnchorPosition] = useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const open = Boolean(anchorPosition);
+  const[ tileState, setTileState ] = useState({});
+
+  const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
-
-  const handleClick = () => {
-    setAnchorPosition({ top: 200, left: 400 });
-  };
-
-  const handleClose = () => {
-    setAnchorPosition(null);
-  };
 
   return (
     <>
@@ -72,32 +66,19 @@ const Projects = () => {
                 }}
                 actionIcon={
                   <IconButton
-                    onClick={handleClick}
+                    onClick={() => { setTileState({ ...tileState, img: tile.img, title: tile.title, popoverImg: tile.popoverImg}); setAnchorEl({ top: 500, left: 400 }); }}
                     aria-label={`star ${tile.title}`}
                   >
                     <ZoomOutMapIcon className={classes.title} />
                   </IconButton>
                 }
               />
-              <Popover
+              <ImgPopover 
                 id={id}
-                open={open}
-                anchorPosition={anchorPosition}
-                onClose={handleClose}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                className={classes.popover}
-              >
-                <CloseIcon onClick={handleClose} className={classes.closeButton}/>
-                <img src={tile.img} alt={tile.title} />
-                <h3>{tile.title}</h3>
-              </Popover>
+                anchorEl={anchorEl}
+                setAnchorEl={setAnchorEl}
+                tile={tileState}
+              />
             </GridListTile>
           ))}
         </GridList>
