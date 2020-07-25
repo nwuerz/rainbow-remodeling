@@ -55,7 +55,7 @@ const Projects = () => {
     <>
       <div className={classes.root}>
         <GridList className={classes.gridList} cols={2}>
-          {tileData.map((tile, index) => (
+          {tileData.map((tile) => (
             <GridListTile key={tile.img} rows={2}>
               <img src={tile.img} alt={tile.title} />
               <GridListTileBar
@@ -66,7 +66,7 @@ const Projects = () => {
                 }}
                 actionIcon={
                   <IconButton
-                    onClick={() => { setTileState({ ...tileState, img: tile.img, title: tile.title, popoverImg: tile.popoverImg}); setAnchorEl({ top: 500, left: 400 }); }}
+                    onClick={() => { setTileState({ ...tileState, img: tile.img, title: tile.title }); setAnchorEl({ top: 500, left: 400 }); }}
                     aria-label={`star ${tile.title}`}
                   >
                     <ZoomOutMapIcon className={classes.title} />

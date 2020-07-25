@@ -33,7 +33,7 @@ const styles = (theme) => ({
   }
 });
 
-const GalleryHeader = (props) => {
+const SimpleHeader = (props) => {
   const { classes } = props;
 
   return (
@@ -53,13 +53,13 @@ const GalleryHeader = (props) => {
                   align="center"
                   className={classes.title}
                 >
-                  {"Rainbow's project gallery"}
+                  {props.title}
                 </Typography>
                 <Typography
                   variant="h5"
                   align="center"
                 >
-                  {"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."}
+                  {props.subTitle}
                 </Typography>
               </div>
             </Grid>
@@ -70,8 +70,8 @@ const GalleryHeader = (props) => {
   );
 };
 
-GalleryHeader.propTypes = {
+SimpleHeader.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(GalleryHeader);
+export default withStyles(styles)(SimpleHeader);
