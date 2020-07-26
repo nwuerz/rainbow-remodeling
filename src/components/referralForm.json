@@ -1,0 +1,34 @@
+[
+    {
+      "md": 6,
+      "label": "Referral First Name",
+      "name": "referralFirstName"
+    },
+    {
+      "md": 6,
+      "label": "Referral Last Name",
+      "name": "referralLastName"
+    },
+    {
+      "md": 6,
+      "label": "Referral email",
+      "name": "referralEmail"
+    },
+    {
+      "md": 6,
+      "label": "Referral phone number",
+      "name": "referralNumber",
+      "type": "number"
+    },
+    {
+      "md": 8,
+      "label": "Referral Street Address",
+      "name": "referralAddress"
+    },
+    {
+      "md": 4,
+      "label": "Zip Code",
+      "name": "referralZip",
+      "type": "number"
+    }
+  ]
