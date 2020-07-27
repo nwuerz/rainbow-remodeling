@@ -7,6 +7,7 @@ import Estimate from './pages/Estimate';
 import Claims from './pages/Claims';
 import Gallery from './pages/Gallery';
 import Referral from './pages/Referral';
+import ProgramTerms from './pages/ProgramTerms';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route exact path={["/claims"]} component={Claims}/>
         <Route exact path={["/gallery"]} component={Gallery}/>
         <Route exact path={["/referral"]} component={Referral}/>
+        <Route exact path={["/terms"]} component={ProgramTerms}/>
       </Switch>
     </>
   );
