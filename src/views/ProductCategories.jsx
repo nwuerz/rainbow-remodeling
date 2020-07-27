@@ -112,7 +112,7 @@ function ProductCategories(props) {
     {
       url:
         '/static/images/heritage-oxford-grey-dallas.jpg',
-      title: 'Projet Gallery',
+      title: 'Project Gallery',
       width: '40%',
       href: "/gallery"
     },

@@ -24,7 +24,7 @@ import SubmitButton from "../components/SubmitButton";
 
 const useStyles = makeStyles(() => ({
   root: {
-    justifyContent: "center",
+    justifyContent: "center"
   },
   input: {
     background: "white",
@@ -33,6 +33,12 @@ const useStyles = makeStyles(() => ({
     background: "black",
     color: "white",
   },
+  link: {
+    textDecoration: "none",
+    color: "blue",
+    fontSize: "small",
+    fontWeight: "bold",
+  }
 }));
 
 const ReferralForm = (props) => {
@@ -137,6 +143,9 @@ const ReferralForm = (props) => {
                     />
                   </Grid>
                 ))}
+              </Grid>
+              <Grid item align="center">
+                <a className={classes.link} href={"/terms"}>program terms</a>
               </Grid>
               <Grid item md={12} xs={12}>
                   <FormLabel component="legend">

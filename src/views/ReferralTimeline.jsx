@@ -15,6 +15,12 @@ const useStyles = makeStyles((theme) => ({
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
   },
+  link: {
+    textDecoration: "none",
+    color: "blue",
+    fontSize: "x-small",
+    fontWeight: "bold"
+  }
 }));
 
 export default function ReferralTimeline() {
@@ -105,7 +111,8 @@ export default function ReferralTimeline() {
             <Typography variant="h6" component="h1">
               Repeat
             </Typography>
-            <Typography>There is no limit to the number of referrals you can make! <a href={"/terms"}>program terms</a></Typography>
+            <Typography>There is no limit to the number of referrals you can make!</Typography>
+            <a className={classes.link} href={"/terms"}>program terms</a>
           </Paper>
         </TimelineContent>
       </TimelineItem>
