@@ -112,7 +112,8 @@ export default function ReferralTimeline() {
                 </Typography>
                 <Typography>
                   Once their roof is built by Rainbow and they have signed their
-                  Certificate of Completion you'll receive your reward!
+                  Certificate of Completion you'll receive a $250 Visa gift
+                  card!
                 </Typography>
               </Paper>
             </TimelineContent>

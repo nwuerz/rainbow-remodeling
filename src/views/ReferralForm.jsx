@@ -19,12 +19,12 @@ import {
 } from "@material-ui/core";
 import SuccessAlert from "../components/SuccessAlert";
 import referrerForm from "../components/referrerForm.json";
-import referralForm from "../components/referralForm.json"
+import referralForm from "../components/referralForm.json";
 import SubmitButton from "../components/SubmitButton";
 
 const useStyles = makeStyles(() => ({
   root: {
-    justifyContent: "center"
+    justifyContent: "center",
   },
   input: {
     background: "white",
@@ -38,17 +38,14 @@ const useStyles = makeStyles(() => ({
     color: "blue",
     fontSize: "small",
     fontWeight: "bold",
-  }
+  },
 }));
 
 const ReferralForm = (props) => {
-
-  const [currentUser, setCurrentUser] = useState(
-      {
-          currentCustomer: false,
-          acceptedTerms: false
-      }
-      );
+  const [currentUser, setCurrentUser] = useState({
+    currentCustomer: false,
+    acceptedTerms: false,
+  });
 
   //formspree state
 
@@ -89,7 +86,6 @@ const ReferralForm = (props) => {
     setCurrentUser({ currentUser: "" });
   };
 
-
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -125,7 +121,7 @@ const ReferralForm = (props) => {
                 ))}
               </Grid>
               <CardHeader title="Who would you like to refer?" align="left" />
-              <Divider style={{ marginBottom: "20px" }}/>
+              <Divider style={{ marginBottom: "20px" }} />
               <Grid container spacing={3}>
                 {referralForm.map((item) => (
                   <Grid item key={item.name} md={item.md} xs={12}>
@@ -145,42 +141,48 @@ const ReferralForm = (props) => {
                 ))}
               </Grid>
               <Grid item align="center">
-                <a className={classes.link} href={"/terms"}>see program terms</a>
+                <a className={classes.link} href={"/terms"}>
+                  see program terms
+                </a>
               </Grid>
               <Grid item md={12} xs={12}>
-                  <FormLabel component="legend">
-                  </FormLabel>
-                  <FormGroup align="center">
-                    <Grid item md={12} xs={12}>
-                      <FormControlLabel
-                        control={
-                          <Switch
-                            checked={currentUser.currentCustomer}
-                            onChange={handleChange}
-                            name="currentCustomer"
-                          />
-                        }
-                        label="I'm a Rainbow customer"
-                      />
-                      <FormControlLabel
-                        control={
-                          <Switch
-                            checked={currentUser.acceptedTerms}
-                            onChange={handleChange}
-                            name="acceptedTerms"
-                          />
-                        }
-                        label="i understand the program terms"/>
-                    </Grid>
-                  </FormGroup>
-                </Grid>
+                <FormLabel component="legend"></FormLabel>
+                <FormGroup align="center">
+                  <Grid item md={12} xs={12}>
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={currentUser.currentCustomer}
+                          onChange={handleChange}
+                          name="currentCustomer"
+                        />
+                      }
+                      label="I'm a Rainbow customer"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={currentUser.acceptedTerms}
+                          onChange={handleChange}
+                          name="acceptedTerms"
+                        />
+                      }
+                      label="i understand the program terms"
+                    />
+                  </Grid>
+                </FormGroup>
+              </Grid>
             </CardContent>
             <Divider />
             <CardActions
               classes={{ root: classes.root }}
               style={{ textAlign: "center" }}
             >
-              {status === "SUCCESS" ? <SuccessAlert /> : <SubmitButton currentUser={currentUser}/>}
+              {status === "SUCCESS" ? (
+                <SuccessAlert />
+              ) : (
+                <SubmitButton currentUser={currentUser} />
+              )}
               {status === "ERROR" ? (
                 <p>
                   Sorry, something went wrong! Please give us a call at (469)

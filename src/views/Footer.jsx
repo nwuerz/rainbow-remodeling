@@ -32,36 +32,34 @@ const Footer = (props) => {
   const { classes } = props;
 
   return (
-    <>
-      <Grid className={classes.root} conatiner>
-        <Grid row align="center" md={12}>
-          <Copyright />
-        </Grid>
-        <Grid row align="center" md={12}>
-          {"2817 Meadow Park"}
-        </Grid>
-        <Grid row align="center" md={12}>
-          {"Garland, TX 75040"}
-        </Grid>
-        <Grid row align="center" md={12}>
-          <a className={classes.phone} href="tel:469-855-6912">
-            469.855.6912
-          </a>
-        </Grid>
-        <Grid row align="center" md={12}>
-          {"rainbowremodeling@yahoo.com"}
-        </Grid>
-        <Grid className={classes.link} row align="center" md={12}>
-          {"Site by "}
-          <Link
-            color="secondary"
-            href="https://nwuerz-portfolio.herokuapp.com/contact"
-          >
-            Nick Wuerz
-          </Link>
-        </Grid>
+    <Grid className={classes.root} container>
+      <Grid item align="center" md={12}>
+        <Copyright />
       </Grid>
-    </>
+      <Grid item align="center" md={12}>
+        {"2817 Meadow Park"}
+      </Grid>
+      <Grid item align="center" md={12}>
+        {"Garland, TX 75040"}
+      </Grid>
+      <Grid item align="center" md={12}>
+        <a className={classes.phone} href="tel:469-855-6912">
+          469.855.6912
+        </a>
+      </Grid>
+      <Grid item align="center" md={12}>
+        {"rainbowremodeling@yahoo.com"}
+      </Grid>
+      <Grid className={classes.link} item align="center" md={12}>
+        {"Site by "}
+        <Link
+          color="secondary"
+          href="https://nwuerz-portfolio.herokuapp.com/contact"
+        >
+          Nick Wuerz
+        </Link>
+      </Grid>
+    </Grid>
   );
 };
 

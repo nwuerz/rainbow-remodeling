@@ -99,7 +99,8 @@ const EstimateForm = (props) => {
       }
     };
     xhr.send(JSON.stringify(currentUser));
-    setCurrentUser({ currentUser: defaultUserState });
+    setCurrentUser(defaultUserState);
+    console.log(moreInfo);
   };
 
   const displayButton = () => {
