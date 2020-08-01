@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/rainbow-remodeling/static/css/main.7ee7b362.chunk.css",
+    "main.js": "/rainbow-remodeling/static/js/main.aa211321.chunk.js",
+    "main.js.map": "/rainbow-remodeling/static/js/main.aa211321.chunk.js.map",
+    "runtime-main.js": "/rainbow-remodeling/static/js/runtime-main.9d295e46.js",
+    "runtime-main.js.map": "/rainbow-remodeling/static/js/runtime-main.9d295e46.js.map",
+    "static/js/2.8ee89926.chunk.js": "/rainbow-remodeling/static/js/2.8ee89926.chunk.js",
+    "static/js/2.8ee89926.chunk.js.map": "/rainbow-remodeling/static/js/2.8ee89926.chunk.js.map",
+    "index.html": "/rainbow-remodeling/index.html",
+    "precache-manifest.114f5f137539d4375518c962bb421133.js": "/rainbow-remodeling/precache-manifest.114f5f137539d4375518c962bb421133.js",
+    "service-worker.js": "/rainbow-remodeling/service-worker.js",
+    "static/css/main.7ee7b362.chunk.css.map": "/rainbow-remodeling/static/css/main.7ee7b362.chunk.css.map",
+    "static/js/2.8ee89926.chunk.js.LICENSE.txt": "/rainbow-remodeling/static/js/2.8ee89926.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9d295e46.js",
+    "static/js/2.8ee89926.chunk.js",
+    "static/css/main.7ee7b362.chunk.css",
+    "static/js/main.aa211321.chunk.js"
+  ]
+}
