@@ -1,9 +1,9 @@
 import React from "react";
 import Fab from "@material-ui/core/Fab";
-import HomeIcon from "@material-ui/icons/Home";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { useHistory } from "react-router-dom";
 
-const HomeButton = () => {
+const BackButton = () => {
   let history = useHistory();
 
   return (
@@ -12,15 +12,15 @@ const HomeButton = () => {
         autoFocus
         style={{
           position: "absolute",
-          right: "0px",
+          left: "0px",
           backgroundColor: "transparent",
         }}
-        onClick={() => history.push("/")}
+        onClick={() => history.push("/referral")}
       >
-        <HomeIcon />
+        <ArrowBackIcon />
       </Fab>
     </>
   );
 };
 
-export default HomeButton;
+export default BackButton;

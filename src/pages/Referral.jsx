@@ -1,33 +1,35 @@
-import React, { useState } from 'react';
-import SimpleHeader from '../views/SimpleHeader';
-import HomeButton from '../components/HomeButton';
-import ReferralTimeline from '../views/ReferralTimeline';
-import ReferralForm from '../views/ReferralForm';
-import ReferralButton from '../components/ReferralButton';
+import React, { useState } from "react";
+import SimpleHeader from "../views/SimpleHeader";
+import HomeButton from "../components/HomeButton";
+import ReferralTimeline from "../views/ReferralTimeline";
+import ReferralForm from "../views/ReferralForm";
+import ReferralButton from "../components/ReferralButton";
+import Footer from "../views/Footer";
 
 const title = "Referral Rewards Program";
-const subTitle = "Refer friends and family to earn Referral Rewards in 3 easy steps!"
+const subTitle =
+  "Refer friends and family to earn Referral Rewards in 3 easy steps!";
 
 const Referral = () => {
+  const [state, setState] = useState({ isClicked: false });
 
-    const [ state, setState ] = useState({ isClicked: false });
-
-    return ( 
+  return (
+    <>
+      <HomeButton />
+      <SimpleHeader title={title} subTitle={subTitle} />
+      <ReferralTimeline />
+      {state.isClicked === false ? (
         <>
-        <HomeButton />
-        <SimpleHeader title={title} subTitle={subTitle} />
-        <ReferralTimeline />
-        {state.isClicked === false ? (
-            <>
-                <ReferralButton  setState={setState}/>
-            </>
-        ) : (
-            <>
-                <ReferralForm />
-            </>
-        )}
+          <ReferralButton setState={setState} />
         </>
-     );
-}
- 
+      ) : (
+        <>
+          <ReferralForm />
+        </>
+      )}
+      <Footer />
+    </>
+  );
+};
+
 export default Referral;

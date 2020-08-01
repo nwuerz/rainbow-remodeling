@@ -4,8 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import ProductHeroLayout from "./ProductHeroLayout";
 
-const backgroundImage =
-  "/static/images/metal-tiles.jpg";
+const backgroundImage = "/static/images/metal-tiles.jpg";
 
 const styles = (theme) => ({
   background: {
@@ -57,7 +56,7 @@ const ProductHero = (props) => {
 };
 
 ProductHero.propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
+  classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(ProductHero);

@@ -34,11 +34,11 @@ const styles = (theme) => ({
   skyline: {
     position: "relative",
     maxWidth: "100%",
-    bottom: -125
-  }
+    bottom: -125,
+  },
 });
 
-const EstimateHeader = (props)=> {
+const EstimateHeader = (props) => {
   const { classes } = props;
 
   return (
@@ -62,17 +62,17 @@ const EstimateHeader = (props)=> {
                 {"roof inspections"}
               </Typography>
             </div>
-            <img 
-                src="/static/images/dallas.jpg" 
-                className={classes.skyline}
-                alt="dallas"
-              />
+            <img
+              src="/static/images/dallas.jpg"
+              className={classes.skyline}
+              alt="dallas"
+            />
           </Grid>
         </Grid>
       </Container>
     </section>
   );
-}
+};
 
 EstimateHeader.propTypes = {
   classes: PropTypes.object.isRequired,

@@ -15,10 +15,24 @@ const SubmitButton = (props) => {
     referralNumber,
     referralAddress,
     referralZip,
-    acceptedTerms
+    acceptedTerms,
   } = props.currentUser;
 
-  if (referrerFirstName && referrerLastName && referrerEmail && referrerNumber && referrerAddress && referrerZip && referralFirstName && referralLastName && referralEmail && referralNumber && referralAddress && referralZip !== "" && acceptedTerms === true) {
+  if (
+    referrerFirstName &&
+    referrerLastName &&
+    referrerEmail &&
+    referrerNumber &&
+    referrerAddress &&
+    referrerZip &&
+    referralFirstName &&
+    referralLastName &&
+    referralEmail &&
+    referralNumber &&
+    referralAddress &&
+    referralZip !== "" &&
+    acceptedTerms === true
+  ) {
     return (
       <Button
         type="submit"

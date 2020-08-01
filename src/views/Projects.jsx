@@ -1,15 +1,14 @@
-import React, { useState }  from "react";
+import React, { useState } from "react";
 import {
   GridList,
   GridListTile,
   GridListTileBar,
-  IconButton
+  IconButton,
 } from "@material-ui/core";
 import ZoomOutMapIcon from "@material-ui/icons/ZoomOutMap";
 import tileData from "../components/tileData.json";
 import ImgPopover from "../components/ImgPopover";
 import { makeStyles } from "@material-ui/core/styles";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,14 +30,13 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
   },
   titleBar: {
-    background:
-      "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+    background: "transparent",
   },
   closeButton: {
     position: "absolute",
     top: 0,
-    right: 0
-  }
+    right: 0,
+  },
 }));
 
 const Projects = () => {
@@ -46,7 +44,7 @@ const Projects = () => {
 
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const[ tileState, setTileState ] = useState({});
+  const [tileState, setTileState] = useState({});
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
@@ -66,14 +64,21 @@ const Projects = () => {
                 }}
                 actionIcon={
                   <IconButton
-                    onClick={() => { setTileState({ ...tileState, img: tile.img, title: tile.title }); setAnchorEl({ top: 500, left: 400 }); }}
+                    onClick={() => {
+                      setTileState({
+                        ...tileState,
+                        img: tile.img,
+                        title: tile.title,
+                      });
+                      setAnchorEl({ top: 500, left: 400 });
+                    }}
                     aria-label={`star ${tile.title}`}
                   >
                     <ZoomOutMapIcon className={classes.title} />
                   </IconButton>
                 }
               />
-              <ImgPopover 
+              <ImgPopover
                 id={id}
                 anchorEl={anchorEl}
                 setAnchorEl={setAnchorEl}

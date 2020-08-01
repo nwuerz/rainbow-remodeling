@@ -29,12 +29,11 @@ const useStyles = makeStyles(() => ({
   },
   button: {
     background: "black",
-    color: "white"
+    color: "white",
   },
 }));
 
 const EstimateForm = (props) => {
-
   //user state
   const defaultUserState = {
     firstName: "",
@@ -48,7 +47,6 @@ const EstimateForm = (props) => {
     isCommercial: false,
     moreInfo: "",
   };
-
 
   const [currentUser, setCurrentUser] = useState(defaultUserState);
 
@@ -104,18 +102,27 @@ const EstimateForm = (props) => {
     setCurrentUser({ currentUser: defaultUserState });
   };
 
-  const displayButton = ()=> {
-    if (firstName && lastName && email && phone && address && zip !== ""){
+  const displayButton = () => {
+    if (firstName && lastName && email && phone && address && zip !== "") {
       return (
-        <Button type="submit" style={{ backgroundColor: "black", color: "white" }} variant="outlined">
+        <Button
+          type="submit"
+          style={{ backgroundColor: "black", color: "white" }}
+          variant="outlined"
+        >
           Submit
         </Button>
       );
-        } return  (
-          <Button disabled align="center" style={{ backgroundColor: "grey", color: "white" }}>
-              Submit
-          </Button>
-        )
+    }
+    return (
+      <Button
+        disabled
+        align="center"
+        style={{ backgroundColor: "grey", color: "white" }}
+      >
+        Submit
+      </Button>
+    );
   };
 
   const { className, ...rest } = props;
@@ -278,7 +285,12 @@ const EstimateForm = (props) => {
               style={{ textAlign: "center" }}
             >
               {status === "SUCCESS" ? <SuccessAlert /> : displayButton()}
-              {status === "ERROR" ? <p>Sorry, something went wrong! Please give us a call at (469) 855-6912.</p> : null}
+              {status === "ERROR" ? (
+                <p>
+                  Sorry, something went wrong! Please give us a call at (469)
+                  855-6912.
+                </p>
+              ) : null}
             </CardActions>
           </FormControl>
         </form>

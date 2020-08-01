@@ -1,21 +1,24 @@
-import React from 'react';
-import HomeButton from '../components/HomeButton';
-import SimpleHeader from '../views/SimpleHeader';
-import Projects from '../views/Projects';
-import GalleryFooter from '../views/GalleryFooter';
+import React from "react";
+import HomeButton from "../components/HomeButton";
+import SimpleHeader from "../views/SimpleHeader";
+import Projects from "../views/Projects";
+import GalleryFooter from "../views/GalleryFooter";
+import Footer from "../views/Footer";
 
-const title = "Rainbow's project gallery"
-const subTitle= "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+const title = "Rainbow's project gallery";
+const subTitle =
+  "Since 2008, Rainbow has been providing high-quality remodeling and roofing service for residential and commercial properties, while earning a well-deserved reputation for quality, service and value. Family-owned and operated, Rainbow understands and appreciates that every customer and every home is unique.";
 
 const Gallery = () => {
-    return ( 
-        <>
-        <HomeButton />
-        <SimpleHeader title={title} subTitle={subTitle}/>
-        <Projects />
-        <GalleryFooter />
-        </>
-     );
-}
- 
+  return (
+    <>
+      <HomeButton />
+      <SimpleHeader title={title} subTitle={subTitle} />
+      <Projects />
+      <GalleryFooter />
+      <Footer />
+    </>
+  );
+};
+
 export default Gallery;
