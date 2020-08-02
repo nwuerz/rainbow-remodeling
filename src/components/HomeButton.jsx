@@ -6,26 +6,21 @@ import { useHistory } from "react-router-dom";
 const HomeButton = () => {
   let history = useHistory();
 
-  const useInitialFocus = (ref, title) => {
-    useEffect(() => {
-      ref.current.focus();
-      document.title = title;
-    }, [ref, title]);
-  };
+  const button = useRef();
 
-  const mainRef = useRef(null);
-  useInitialFocus(mainRef, "Home Button");
+  useEffect(() => button.current && button.current.focus());
 
   return (
     <>
       <Fab
+        id="button"
         style={{
           position: "absolute",
           right: "0px",
           backgroundColor: "transparent",
         }}
         onClick={() => history.push("/")}
-        ref={mainRef}
+        buttonRef={button}
       >
         <HomeIcon />
       </Fab>
