@@ -9,7 +9,7 @@ const HomeButton = () => {
   return (
     <>
       <Fab
-        autoFocus
+        autofocus
         style={{
           position: "absolute",
           right: "0px",
