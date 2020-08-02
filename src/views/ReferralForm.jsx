@@ -141,7 +141,7 @@ const ReferralForm = (props) => {
                 ))}
               </Grid>
               <Grid item align="center">
-                <a className={classes.link} href={"/terms"}>
+                <a className={classes.link} href={"/referral/terms"}>
                   see program terms
                 </a>
               </Grid>
