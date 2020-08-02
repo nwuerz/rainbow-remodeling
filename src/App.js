@@ -21,7 +21,7 @@ function App() {
         <Route exact path={["/claims"]} component={Claims} />
         <Route exact path={["/gallery"]} component={Gallery} />
         <Route exact path={["/referral"]} component={Referral} />
-        <Route exact path={["/referral/terms"]} component={ProgramTerms} />
+        <Route exact path={["/terms"]} component={ProgramTerms} />
       </Switch>
     </>
   );
