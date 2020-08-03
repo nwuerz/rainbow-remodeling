@@ -91,7 +91,7 @@ function ClaimsHeader(props) {
                   align="center"
                 >
                   {
-                    "Due to the severitry of weather in Texas, thousands of roofs are replaced every year due to wind and hail damage. These roof replacements are typically covered by most homeowners' insurance policies. For many of our customers, this is the first and last claim they will ever file. Our experience and understanding of the claims process will help you maximize the return on your insurance investment."
+                    "Due to the severity of weather in Texas, thousands of roofs are replaced every year due to wind and hail damage. These roof replacements are typically covered by most homeowners' insurance policies. For many of our customers, this is the first and last claim they will ever file. Our experience and understanding of the claims process will help you maximize the return on your insurance investment."
                   }
                 </Typography>
               </div>
