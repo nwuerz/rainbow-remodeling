@@ -52,10 +52,7 @@ const Footer = (props) => {
       </Grid>
       <Grid className={classes.link} item align="center" xs={12} s={12} md={12}>
         {"Site by "}
-        <Link
-          color="secondary"
-          href="https://nwuerz-portfolio.herokuapp.com/contact"
-        >
+        <Link color="secondary" href="https://nwuerz-portfolio.herokuapp.com">
           Nick Wuerz
         </Link>
       </Grid>
