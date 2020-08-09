@@ -43,6 +43,18 @@ const useStyles = makeStyles(() => ({
 
 const ReferralForm = (props) => {
   const [currentUser, setCurrentUser] = useState({
+    referrerFirstName: "",
+    referrerLastName: "",
+    referrerEmail: "",
+    referrerNumber: "",
+    referrerAddress: "",
+    referrerZip: "",
+    referralFirstName: "",
+    referralLastName: "",
+    referralEmail: "",
+    referralNumber: "",
+    referralAddress: "",
+    referralZip: "",
     currentCustomer: false,
     acceptedTerms: false,
   });
