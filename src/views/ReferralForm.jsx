@@ -110,7 +110,7 @@ const ReferralForm = (props) => {
                       label={item.label}
                       margin="dense"
                       name={item.name}
-                      value=""
+                      value={item.name.value}
                       type={item.type}
                       onChange={handleInput}
                       required
@@ -130,7 +130,7 @@ const ReferralForm = (props) => {
                       label={item.label}
                       margin="dense"
                       name={item.name}
-                      value=""
+                      value={item.name.value}
                       type={item.type}
                       onChange={handleInput}
                       required
