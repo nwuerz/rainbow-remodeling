@@ -50,10 +50,9 @@ const Footer = (props) => {
       <Grid item align="center" xs={12} s={12} md={12}>
         {"rainbowremodeling@yahoo.com"}
       </Grid>
-      <Grid className={classes.link} item align="center" xs={12} s={12} md={12}>
-        {"Site by "}
+      <Grid  item align="center" xs={12} s={12} md={12}>
         <Link color="secondary" href="https://nwuerz-portfolio.herokuapp.com">
-          Nick Wuerz
+        <img style={{ height: "25px", width :"25px"}} src="/static/images/portfolio-link.jpg" alt="nickwuerz.com link" />
         </Link>
       </Grid>
     </Grid>
