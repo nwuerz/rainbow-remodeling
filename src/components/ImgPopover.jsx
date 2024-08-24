@@ -48,7 +48,12 @@ const ImgPopover = (props) => {
           alt={props.tile.title}
           className={classes.image}
         />
-        <h3>{props.tile.title}</h3>
+        <h3
+        style={{
+          marginLeft: 15,
+          marginRight: 15,
+        }}
+        >{props.tile.title}</h3>
       </Popover>
     </>
   );
