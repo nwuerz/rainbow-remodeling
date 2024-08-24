@@ -127,7 +127,10 @@ function ProductCategories(props) {
             style={{
               width: image.width,
             }}
-            onClick={() => history.push(image.href)}
+            onClick={() => {
+              history.push(image.href);
+              window.scrollTo(0, 0);
+            }}
           >
             <div
               className={classes.imageSrc}
