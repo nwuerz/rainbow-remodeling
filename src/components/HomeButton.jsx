@@ -1,4 +1,4 @@
-import React, { createRef, useEffect } from "react";
+import React, { createRef } from "react";
 import Fab from "@material-ui/core/Fab";
 import HomeIcon from "@material-ui/icons/Home";
 import { useHistory } from "react-router-dom";
@@ -8,18 +8,15 @@ const HomeButton = () => {
 
   let button = createRef();
 
-  useEffect(() => {
-    button.current.focus();
-  });
-
   return (
     <>
       <Fab
         id="button"
         style={{
-          position: "absolute",
+          position: "fixed",
           right: "0px",
           backgroundColor: "transparent",
+          zIndex: 1000
         }}
         onClick={() => history.push("/")}
         ref={button}
